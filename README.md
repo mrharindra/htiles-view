@@ -21,7 +21,7 @@ Important note:
 	4. param 'name' attribute MUST not start with '/' or '\\'
 	5. param 'value' attribute can have another view name as value. Example: <param name="contentBody" value="view:error" />
 
-    Refer the example/file sample_htiles_view_config.xml for samle configuration
+    Refer the example/file sample_htiles_view_config.xml for sample configuration
 
 ## 2. Use htiles-view in Spring web project
 ### Configure the htiles-view in WebMvcConfigurer class
