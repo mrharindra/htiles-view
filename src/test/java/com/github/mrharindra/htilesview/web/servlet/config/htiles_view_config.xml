@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<htiles-views-config>
+
+	<view name="base" path="/portal/layout/layout.jsp">
+		<param name="header" value="" />
+		<param name="contentBody" value="" />
+		<param name="footer" value="/portal/layout/footer.jsp" />				
+	</view>	
+	
+	<view name="activities" extends="base">
+		<param name="contentBody" value="/portal/activities.jsp" />
+	</view>
+	
+	<view name="filter" extends="base">
+		<param name="contentBody" value="/portal/filter.jsp" />
+	</view>
+	 	
+	<view name="error" extends="base">
+		<param name="contentBody" value="/portal/pages/Error.jsp" />
+	</view>
+	
+	<view name="error" path="/portal/layout/errorlayout.jsp">
+		<param name="contentBody" value="/portal/pages/Error.jsp" />
+	</view>
+	
+	<!--  include another view -->
+	<view name="errorV2" path="/portal/layout/errorlayoutV2.jsp">
+		<param name="contentBody" value="view:error" />
+	</view>
+
+</htiles-views-config>
