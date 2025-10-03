@@ -45,7 +45,7 @@ Currently there is custome taglibs to use tiles parameter but it is achived usin
 	A Map of all the parameters of a view is avalable in HttpRequest attibute using key "htv" or given param namespace in HTilesViewConfigurer.setParamNamespace(...)
 	
     All the parameters of a view are also avalable in HttpRequest attibute using key  "htv_<PARAM_NAME>" or using <param_namespace>_<PARAM_NAME>
-	
+```java	
 	Example: 
 		Scriptlet java code:
         
@@ -82,7 +82,7 @@ Currently there is custome taglibs to use tiles parameter but it is achived usin
             
         Print:
             <core:out value="${htv.title}"/>
-
+```
 
 # 4. Use htiles-view in simple Servlet based web application without Spring
 ## 4.1 Add below configuration in web.xml file
@@ -99,6 +99,7 @@ Currently there is custome taglibs to use tiles parameter but it is achived usin
 		<listener-class>com.github.mrharindra.htilesview.web.servlet.listener.HtilesViewInitializerListener</listener-class>	
 	</listener>
 ```
+
 ## 4.2 Forword request from your action servelet to view
     There is a class 'ForwardToViewServlet' which forwrd request to the view with view's parameters. Use below sentax to forward a rewuest to view
 	
