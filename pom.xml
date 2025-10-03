@@ -4,7 +4,7 @@
 
   <groupId>com.github.mrharindra.htilesview</groupId>
   <artifactId>htiles-view</artifactId>
-  <version>0.0.1-SNAPSHOT</version>
+  <version>1.0.0.0</version>
   <packaging>jar</packaging>
 
   <name>htiles-view</name>

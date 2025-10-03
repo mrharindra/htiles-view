@@ -9,7 +9,7 @@
 	-->
 
 	<view name="base" path="/WEB-INF/jsp/layout/layout.jsp">
-		<param name="header" value="" />
+		<param name="header" value="/WEB-INF/jsp/layout/header.jsp" />
 		<param name="contentBody" value="" />
 		<param name="footer" value="/WEB-INF/jsp/layout/footer.jsp" />				
 	</view>	
