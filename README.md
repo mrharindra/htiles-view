@@ -41,10 +41,8 @@ Currently there is custome taglibs to use tiles parameter but it is achived usin
 	}
 ```
 # 3. Use views parameters in JSPs
-
-	A Map of all the parameters of a view is avalable in HttpRequest attibute using key "htv" or given param namespace in HTilesViewConfigurer.setParamNamespace(...)
-	
-    All the parameters of a view are also avalable in HttpRequest attibute using key  "htv_<PARAM_NAME>" or using <param_namespace>_<PARAM_NAME>
+A Map of all the parameters of a view is avalable in HttpRequest attibute using key "htv" or given param namespace in HTilesViewConfigurer.setParamNamespace(...)
+All the parameters of a view are also avalable in HttpRequest attibute using key  "htv_<PARAM_NAME>" or using <param_namespace>_<PARAM_NAME>
 
 	Example: 
 		Scriptlet java code:
@@ -101,15 +99,16 @@ Currently there is custome taglibs to use tiles parameter but it is achived usin
 ```
 
 ## 4.2 Forword request from your action servelet to view
-    There is a class 'ForwardToViewServlet' which forwrd request to the view with view's parameters. Use below sentax to forward a rewuest to view
-	
+    There is a class 'ForwardToViewServlet' which forwrd request to the view with view's parameters.
+	Use below sentax to forward a request to view
+```java	
     request.getRequestDispatcher("/forwardtoview/<VIEW_NAME>").forward(request, response);
 
     <VIEW_NAME>: the view name where you want to forward request. 
 
     Example - 
     request.getRequestDispatcher("/forwardtoview/userprofile").forward(request, response);
-
+```
 
 # License
     [MIT License] (LICENSE)
