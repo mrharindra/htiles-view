@@ -4,7 +4,7 @@ Since, Apache tiles is retired. this is the replacement of it. This htiles-view 
 Currently there is custome taglibs to use tiles parameter but it is achived using EL expresstion or using jsp expression.
 
 # 1. htiles-View configuration file
-    Refer the file [sample_htiles_view_config.xml] (sample_htiles_view_config.xml)
+    Refer the file sample_htiles_view_config.xml
 
 ## 2. Use htiles-view in Spring web project
 ### Configure the htiles-view in WebMvcConfigurer class
@@ -42,13 +42,14 @@ Currently there is custome taglibs to use tiles parameter but it is achived usin
 ```
 # 3. Use views parameters in JSPs
 A Map of all the parameters of a view is avalable in HttpRequest attibute using key "htv" or given param namespace in HTilesViewConfigurer.setParamNamespace(...)
+
 All the parameters of a view are also avalable in HttpRequest attibute using key  "htv_<PARAM_NAME>" or using <param_namespace>_<PARAM_NAME>
 
 	Example: 
 		Scriptlet java code:
         
 		Map<String, String> params = (Map<String, String>)request.getAttribute("htv");			
-		String paramValue = params.get("PARAM_NAME");
+		String paramValue = params.get("<PARAM_NAME>");
 			Example: 
 			String paramBody = params.get("contentBody");
 		
@@ -111,10 +112,5 @@ All the parameters of a view are also avalable in HttpRequest attibute using key
 ```
 
 # License
-    [MIT License] (LICENSE)
-
-
-
-
-
+    MIT License- Refer LICENSE
 
