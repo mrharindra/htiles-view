@@ -48,30 +48,30 @@ Currently there is custome taglibs to use tiles parameter but it is achived usin
 	
 	Example: 
 		Scriptlet java code:
-```jsp        
-    Map<String, String> params = (Map<String, String>)request.getAttribute("htv");			
-    String paramValue = params.get("PARAM_NAME");
-        Example: 
-        String paramBody = params.get("contentBody");
-    
-    OR
-    String paramValue = request.getAttribute.get("htv_<PARAM_NAME>");
-    Example: 
-    String paramBody = request.getAttribute("htv_contentBody");
-```				
+        
+		Map<String, String> params = (Map<String, String>)request.getAttribute("htv");			
+		String paramValue = params.get("PARAM_NAME");
+			Example: 
+			String paramBody = params.get("contentBody");
+		
+		OR
+		String paramValue = request.getAttribute.get("htv_<PARAM_NAME>");
+		Example: 
+		String paramBody = request.getAttribute("htv_contentBody");
+	
 							
 		
 	JSP EL expression: can access directly using below santext
-```jsp		
-    ${htv.<PARAM_NAME>}   // param value will fetch from Map which is stored in request
-    
-    OR
-    
-    ${htv_PARAM_NAME}   // param value will fetch from request
-    
-    Example: ${htv.contentBody}  or ${htv.headerJsp}
-    
-    OR  ${htv_contentBody}  or ${htv_headerJsp}
+		
+		${htv.<PARAM_NAME>}   // param value will fetch from Map which is stored in request
+		
+		OR
+		
+		${htv_PARAM_NAME}   // param value will fetch from request
+		
+		Example: ${htv.contentBody}  or ${htv.headerJsp}
+		
+			OR  ${htv_contentBody}  or ${htv_headerJsp}
     
     Use with JSTL:
         Example
@@ -82,7 +82,6 @@ Currently there is custome taglibs to use tiles parameter but it is achived usin
             
         Print:
             <core:out value="${htv.title}"/>
-```
 
 
 # 4. Use htiles-view in simple Servlet based web application without Spring
@@ -102,10 +101,12 @@ Currently there is custome taglibs to use tiles parameter but it is achived usin
 ```
 ## 4.2 Forword request from your action servelet to view
     There is a class 'ForwardToViewServlet' which forwrd request to the view with view's parameters. Use below sentax to forward a rewuest to view
+	
 ```java
     request.getRequestDispatcher("/forwardtoview/<VIEW_NAME>").forward(request, response);
 ```
     <VIEW_NAME>: the view name where you want to forward request. 
+
     Example - 
 ```java    
     request.getRequestDispatcher("/forwardtoview/userprofile").forward(request, response);
