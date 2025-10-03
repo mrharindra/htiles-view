@@ -1,7 +1,7 @@
 # htiles-view
-Since, Apache tiles is retired. this is the replacement of it. This htiles-view have similar configurations of apache tiles.
+Since, Apache tiles is retired, this is the replacement of it. This htiles-view have similar configurations of apache tiles.
 
-Currently there is custome taglibs to use tiles parameter but it is achived using EL expresstion or using jsp expression.
+Currently there is no custome taglibs to use tiles parameter but it is achived using EL expresstion or using jsp expression.
 
 # 1. htiles-View configuration file
     Refer the file sample_htiles_view_config.xml
