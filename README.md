@@ -4,7 +4,24 @@ Since, Apache tiles is retired, this is the replacement of it. This htiles-view 
 Currently there is no custome taglibs to use tiles parameter but it is achived using EL expresstion or using jsp expression.
 
 # 1. htiles-View configuration file
-    Refer the file sample_htiles_view_config.xml
+	Below is the structure of view configuration file:
+```xml
+<htiles-views-config>
+	<view name="{unique_name_of_view}" path="{path_of_jsp}" extends="{extends_other_view}">
+		<param name="{param-name1}" value="{some_value}" />
+		<param name="{param-name2}" value="{some_value}" />
+	</view>	
+</htiles-views-config>	
+```
+Important note:
+
+	1. view 'name' and 'extends' attribute MUST not contains '/' or '\\'.
+	2. view 'path' and 'extends' both can not be provided togather.
+	3. param 'name' attribute must not contains dots '.' 
+	4. param 'name' attribute MUST not start with '/' or '\\'
+	5. param 'value' attribute can have another view name as value. Example: <param name="contentBody" value="view:error" />
+
+    Refer the example/file sample_htiles_view_config.xml for samle configuration
 
 ## 2. Use htiles-view in Spring web project
 ### Configure the htiles-view in WebMvcConfigurer class
@@ -103,9 +120,9 @@ All the parameters of a view are also avalable in HttpRequest attibute using key
     There is a class 'ForwardToViewServlet' which forwrd request to the view with view's parameters.
 	Use below sentax to forward a request to view
 ```java	
-    request.getRequestDispatcher("/forwardtoview/<VIEW_NAME>").forward(request, response);
+    request.getRequestDispatcher("/forwardtoview/{VIEW_NAME}").forward(request, response);
 
-    <VIEW_NAME>: the view name where you want to forward request. 
+    {VIEW_NAME}: the view name where you want to forward request. 
 
     Example - 
     request.getRequestDispatcher("/forwardtoview/userprofile").forward(request, response);
