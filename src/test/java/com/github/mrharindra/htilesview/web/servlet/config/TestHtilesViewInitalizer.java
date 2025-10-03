@@ -7,7 +7,11 @@ public class TestHtilesViewInitalizer
 {
 	public static void main(String[] args) 
 	{
-		String str = TestHtilesViewInitalizer.class.getClassLoader().getResource("com/github/mrharindra/htilesview/web/servlet/config/htiles_view_config.xml").getPath();
+		String path = "com/github/mrharindra/htilesview/web/servlet/config/htiles_view_config.xml";
+		String obj = TestHtilesViewInitalizer.class.getClassLoader()
+				.getResource(path).getPath();		
+		
+		String str = obj; 
 		str = str.replaceFirst("^/", "").replaceFirst("^\\\\", "");
 		
 		Set<String> set = new HashSet<String>();
@@ -15,7 +19,8 @@ public class TestHtilesViewInitalizer
 		
 		HTilesViewInitializer initializer = new HTilesViewInitializer();
 		try {
-			initializer.initialize( set, null );
+			HTilesViewsConfig config =  initializer.initialize( set, null );
+			System.out.println(config);
 		} 
 		catch (Exception e) {
 			e.printStackTrace();

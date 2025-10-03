@@ -79,7 +79,7 @@ public class HTilesViewConfigurer implements ServletContextAware, InitializingBe
 	}
 	
 	/**Initialize with view configurations
-	 * @param viewConfigs Multiple file can be passed with comma (,) separated.		<BR>
+	 * @param viewConfigs Multiple file can be passed using String []. <BR>
 	 * Configurations file location must be relative to application folder path.    <BR>
 	 * Example: /WEB-INF/htiles_view_config.xml
 	 */
@@ -89,7 +89,7 @@ public class HTilesViewConfigurer implements ServletContextAware, InitializingBe
 	}
 	
 	/** Set view configuration files.
-	 * @param viewConfigs Multiple file can be passed with comma (,) separated.		<BR>
+	 * @param viewConfigs Multiple file can be passed using String []. <BR>
 	 * Configurations file location must be relative to application folder path.    <BR>
 	 * Example: /WEB-INF/htiles_view_config.xml
 	 */

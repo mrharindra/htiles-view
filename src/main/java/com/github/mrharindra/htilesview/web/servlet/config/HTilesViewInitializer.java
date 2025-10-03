@@ -126,6 +126,10 @@ public class HTilesViewInitializer
 		
 	}
 	
+	/** Resolve the 'extends' attributes.
+	 * @param pCurrView
+	 * @param pResolvedViewsAll
+	 */
 	private void resolveView(ViewConfig pCurrView, Map<String, ViewConfig> pResolvedViewsAll)
 	{
 		if(pCurrView.getParent() == null || pCurrView.getParent().trim().isEmpty() == true)
@@ -191,6 +195,8 @@ public class HTilesViewInitializer
 			
 			// remove the 'view:' prefix
 			String viewName = paramValue.trim().replaceFirst("(?i)view:", "");
+			viewName = viewName.replace("/", "").replace("\\", "");
+			
 			ViewConfig lNestedView = pResolvedViewsAll.get( viewName.trim() );
 			if(lNestedView == null)
 			{

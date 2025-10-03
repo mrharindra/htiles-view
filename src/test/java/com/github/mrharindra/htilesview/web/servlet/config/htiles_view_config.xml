@@ -14,18 +14,15 @@
 	<view name="filter" extends="base">
 		<param name="contentBody" value="/portal/filter.jsp" />
 	</view>
-	 	
-	<view name="error" extends="base">
-		<param name="contentBody" value="/portal/pages/Error.jsp" />
-	</view>
-	
+
 	<view name="error" path="/portal/layout/errorlayout.jsp">
 		<param name="contentBody" value="/portal/pages/Error.jsp" />
 	</view>
 	
 	<!--  include another view -->
 	<view name="errorV2" path="/portal/layout/errorlayoutV2.jsp">
-		<param name="contentBody" value="view:error" />
+		<param name="errorHeader" value="/portal/pages/ErrorHeader.jsp" />
+		<param name="errorBodyV2" value="view:error" />
 	</view>
 
 </htiles-views-config>

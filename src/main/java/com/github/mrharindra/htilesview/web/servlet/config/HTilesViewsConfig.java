@@ -114,4 +114,9 @@ public class HTilesViewsConfig
 		
 		return null;
 	}
+	
+	@Override
+	public String toString() {
+		return "Resolved_views: " + mmapResolvedViews.values();
+	}
 }

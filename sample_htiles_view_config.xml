@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<htiles-views-config>
+	<!--
+		Important note:
+			1. view 'name' and 'extends' attribute MUST not contains '/' or '\\'.
+			2. param 'name' attribute must not contains dots '.' 
+			3. param 'name' attribute MUST not start with '/' or '\\'
+			4. param 'value' can have another view name as value. Example: <param name="contentBody" value="view:error" />
+	-->
+
+	<view name="base" path="/WEB-INF/jsp/layout/layout.jsp">
+		<param name="header" value="" />
+		<param name="contentBody" value="" />
+		<param name="footer" value="/WEB-INF/jsp/layout/footer.jsp" />				
+	</view>	
+	
+	<view name="userprofile" extends="base">
+		<param name="contentBody" value="/WEB-INF/jsp/user/userprofile.jsp" />
+	</view>
+	
+	<view name="error" path="/WEB-INF/jsp/layout/errorlayout.jsp">
+		<param name="errorBody" value="/WEB-INF/jsp/layout/Error.jsp" />
+		<param name="errorHeader" value="/WEB-INF/jsp/layout/ErrorHeader.jsp" />
+	</view>
+	
+	<!--  include another view -->
+	<view name="errorV2" path="/WEB-INF/jsp/layout/errorlayoutV2.jsp">
+		<param name="errorBodyV2" value="view:error" />
+	</view>
+
+</htiles-views-config>

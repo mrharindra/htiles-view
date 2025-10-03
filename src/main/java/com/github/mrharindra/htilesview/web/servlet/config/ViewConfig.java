@@ -49,51 +49,66 @@ public class ViewConfig
 		
 	private Map<String, String> paramsMap = null;
 	
-	public ViewConfig(String name, String path, String parent) 
+	public ViewConfig(String pName, String pPath, String pParent) 
 	{
-		this.name = name;
-		this.path = path;
-		this.parent = parent; 
+		if(pName != null) 
+		{
+			pName = pName.trim().replace("/", "").replace("\\", "");
+		}
+		this.name = pName;
+		
+		if(pPath != null) 
+		{
+			pPath = pPath.trim();
+		}
+		this.path = pPath;
+		
+		if(pParent != null) 
+		{
+			pParent = pParent.trim().replace("/", "").replace("\\", "");
+		}
+		this.parent = pParent;
 	}
 
 	public String getName() 
 	{
-		if(name != null) 
-		{
-			name = name.trim().replace("/", "").replace("\\", "");
-		}
 		return name;
 	}
 
 	public String getParent() 
 	{
-		if(parent != null) 
-		{
-			parent = parent.trim().replace("/", "").replace("\\", "");
-		}
 		return parent;
 	}
-	public void setParent(String parent) 
+	public void setParent(String pParent) 
 	{
-		this.parent = parent;
+		if(pParent != null) 
+		{
+			pParent = pParent.trim().replace("/", "").replace("\\", "");
+		}
+		this.parent = pParent;
+		
 	}
 	public String getPath() 
 	{
-		if(path != null) 
-		{
-			path = path.trim();
-		}
 		return path;
 	}
-	public void setPath(String path) 
+	public void setPath(String pPath) 
 	{
-		this.path = path;
+		if(pPath != null) 
+		{
+			pPath = pPath.trim();
+		}
+		this.path = pPath;
 	}
 	
-	public void setParamsMap(Map<String, String> paramMap) {
-		this.paramsMap = paramMap;
-		
+	public void setParamsMap(Map<String, String> paramMap) 
+	{
+		if(paramMap != null) 
+		{
+			this.paramsMap = paramMap;
+		}
 	}
+	
 	public Map<String, String> getParamsMap()
 	{
 		return paramsMap;
@@ -119,8 +134,6 @@ public class ViewConfig
 		{
 			throw new IllegalArgumentException("path and parent both are provided for view '" + name+"'");
 		}
-		
-		getParamsMap();
 	}
 	
 	@Override
